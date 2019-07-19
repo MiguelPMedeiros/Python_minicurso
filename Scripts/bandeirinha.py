@@ -1,0 +1,51 @@
+import turtle
+blind = turtle.Turtle()
+home = turtle.Turtle()
+X = turtle.Turtle()
+screen = turtle.Screen()
+X.color("white")
+blind.speed(40)
+home.pu()
+home.goto(250,300)
+blind.pu()
+blind.goto(0,300)
+blind.pd()
+blind.rt(90)
+for i in range(2):
+    blind.begin_fill()
+    blind.fillcolor("cyan")
+    while blind.pos()[1]!=X.pos()[1]:
+        blind.fd(1)
+    blind.left(90)
+    while blind.pos()[0]!=home.pos()[0]:
+        blind.fd(1)
+        blind.lt(90)
+        blind.fd(1)
+        blind.rt(90)
+    blind.lt(90)
+    while blind.pos()[1]!=home.pos()[1]:
+        blind.fd(1)
+    blind.goto(-50,300)
+    blind.rt(180)
+    blind.end_fill()
+blind.rt(90)
+blind.bk(550)
+blind.lt(90)
+for i in range(2):
+    blind.begin_fill()
+    blind.fillcolor("purple")
+    while round(blind.pos()[1],1)!=X.pos()[1]:
+        blind.fd(1)
+    blind.rt(90)
+    while round(blind.pos()[0],1)!=home.pos()[0]:
+        blind.fd(1)
+        blind.rt(90)
+        blind.fd(1)
+        blind.lt(90)
+    blind.rt(90)
+    while round(blind.pos()[1],1)!=home.pos()[1]:
+        blind.fd(1)
+    blind.goto(550,300)
+    blind.rt(180)
+    blind.end_fill()
+screen.mainloop()
